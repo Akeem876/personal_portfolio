@@ -340,7 +340,7 @@ main {
 }
 /* contact */
 .contact-header-logo {
- padding-top: 65px;
+ /* padding-top: 65px; */
  width: 30%;
  margin: auto;
  position: relative;
@@ -355,7 +355,7 @@ main {
  left: 43%;
  margin-left: -50px;
  text-transform: uppercase;
- color: #353501;
+ color: #fcfceb;
 }
 .contact-header-logo h1 {
  text-align: center;
@@ -363,5 +363,72 @@ main {
  font-size: 5rem;
  letter-spacing: 3.5px;
  opacity: 0.5;
- color: #616103;
+ color: #e2e2db;
+}
+.contact-header-logo .underline {
+ background-color: #ebdec7;
+}
+.contact {
+ background-color: #777350;
+ padding: 50px;
+}
+.contact-cont {
+ background-color: #c2ac8d;
+ width: 35%;
+ margin: 35px auto 0;
+ padding: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.form-area {
+ padding: 10px;
+ width: 100%;
+
+ /* background-color: #f0f1ed; */
+}
+.name {
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 15px;
+}
+.email {
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 15px;
+}
+.text-message {
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 15px;
+}
+
+textarea {
+ resize: none;
+}
+input[name="fname"],
+input[name="email"],
+textarea {
+ padding: 8px 4px;
+ border: none;
+ background-color: rgb(233, 233, 223);
+ outline: none;
+ border-radius: 3px;
+}
+label {
+ margin-bottom: 6px;
+}
+.sub input {
+ margin: 11px 0;
+ background-color: rgb(252, 250, 239);
+ border: none;
+ outline: none;
+ padding: 6px 5px;
+ width: 100%;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ transition: all ease 0.4s;
+}
+.sub input:hover {
+ background-color: rgb(235, 236, 211);
 }
