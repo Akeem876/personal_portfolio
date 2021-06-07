@@ -265,6 +265,12 @@ main {
  color: #616103;
 }
 
+.port-title {
+ background-color: #ebdec7;
+ padding: 2px;
+ color: #554c3e;
+ font-size: 1.2rem;
+}
 .portfolio {
  background-color: #c2ac8d;
  margin-top: 400px;
@@ -283,13 +289,98 @@ main {
  text-align: center;
  font-size: 2.7rem;
 }
+.porto {
+ display: flex;
+}
+.porto img {
+ border-radius: 4px 4px 0 0;
+}
 .port {
  /* background-color: lightgray; */
  border: 1px solid #fff9e6;
  border-radius: 4px;
- padding: 6px;
- width: 20%;
+ /* padding: 6px; */
+ width: auto;
  height: auto;
+ cursor: pointer;
+}
+/* porfolio modal */
+.port-modal {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ z-index: 20;
+ background-color: rgba(221, 221, 214, 0.568);
+ opacity: 0;
+ transition: all ease-out 0.3s;
+}
+.port-modal.open {
+ display: block;
+ opacity: 1;
+}
+.inner-modal {
+ background-color: #b4ab9ec2;
+ padding: 35px 50px;
+ border-radius: 4px;
+ position: relative;
+ width: 730px;
+ overflow-x: hidden;
+}
+.inner-modal-img {
+ display: flex;
+ gap: 50px;
+}
+.first {
+ opacity: 1;
+ transform: translateX(0);
+}
+.first-updt {
+ opacity: 0;
+ transform: translateX(100%);
+}
+.last {
+ opacity: 0;
+ transform: translateX(100%);
+}
+.last-updt {
+ opacity: 1;
+ transform: translateX(-280%);
+}
+.inner-modal h4 {
+ margin-top: 20px;
+}
+.port-modal-outer {
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.portfolio button {
+ background: none;
+ border: none;
+ outline: none;
+}
+#left {
+ position: absolute;
+ top: 50%;
+ left: 10px;
+}
+#right {
+ position: absolute;
+ top: 50%;
+ right: 10px;
+}
+.fas {
+ color: #413f32;
+ font-size: 20px;
+ opacity: 0.2;
+ transition: all 0.4s ease;
+}
+.fas:hover {
+ opacity: 1;
 }
 /* about */
 .about-header-logo {
