@@ -266,7 +266,7 @@ main {
 }
 
 .port-title {
- background-color: #ebdec7;
+ /* background-color: #ebdec7; */
  padding: 2px;
  color: #554c3e;
  font-size: 1.2rem;
@@ -296,7 +296,7 @@ main {
  border-radius: 4px 4px 0 0;
 }
 .port {
- /* background-color: lightgray; */
+ background-color: #ebdec7;
  border: 1px solid #fff9e6;
  border-radius: 4px;
  /* padding: 6px; */
@@ -327,27 +327,35 @@ main {
  border-radius: 4px;
  position: relative;
  width: 730px;
- overflow-x: hidden;
+ /* overflow-x: hidden; */
 }
 .inner-modal-img {
- display: flex;
- gap: 50px;
+ /* display: flex;
+ gap: 50px; */
+ position: relative;
+ height: 300px;
 }
-.first {
- opacity: 1;
- transform: translateX(0);
+.inner-modal-img img {
+ position: absolute;
+ transition: all ease 0.4s;
+ top: -100;
 }
-.first-updt {
- opacity: 0;
- transform: translateX(100%);
+.last.small {
+ position: absolute;
+ left: 50%;
+ margin-left: -55px;
+}
+.active.small {
+ position: absolute;
+ left: 50%;
+ margin-left: -60px;
+}
+.active {
+ display: block;
 }
 .last {
  opacity: 0;
- transform: translateX(100%);
-}
-.last-updt {
- opacity: 1;
- transform: translateX(-280%);
+ position: absolute;
 }
 .inner-modal h4 {
  margin-top: 20px;

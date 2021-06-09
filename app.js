@@ -23,50 +23,41 @@ outerModal.addEventListener(
 );
 
 // modal button data
-const leftBtn = document.getElementById("left");
-const rightBtn = document.getElementById("right");
-const Img = document.querySelectorAll(" .inner-modal-img img");
-// console.log(lastImg);
-// console.log(firstImg);
-console.log(Img);
-let firstImg = Img[0];
-let lastImg = Img[1];
+const prevBtn = document.getElementById("left");
+const nextBtn = document.getElementById("right");
+const img = document.querySelector(".inner-modal-img").children;
+const length = img.length;
+let index = 0;
+const btnHandler = (direction) => {
+ //  console.log(index);
 
-console.log(lastImg);
-console.log(firstImg);
-
-let status = false;
-
-function prevBtnHandler() {
- status = true;
- if (status == true) {
-  firstImg.classList.add("first-updt");
-  firstImg.classList.remove("first");
-
-  lastImg.classList.add("last-updt");
-  lastImg.classList.remove("last");
-  state = false;
+ if (direction === "next") {
+  index++;
+  for (i = 0; i < length; i++) {
+   img[i].classList.remove("active");
+   img[i].classList.add("last");
+  }
+  if (index === length) {
+   index = 0;
+  }
+  img[index].classList.remove("last");
+  img[index].classList.add("active");
  } else {
-  firstImg.classList.remove("first-updt");
-  firstImg.classList.add("first");
-
-  lastImg.classList.remove("last-updt");
-  lastImg.classList.add("last");
-  state = true;
+  index--;
+  for (i = 0; i < length; i++) {
+   img[i].classList.remove("active");
+   img[i].classList.add("last");
+  }
+  if (index < 0) {
+   index = length - 1;
+  }
+  img[index].classList.remove("last");
+  img[index].classList.add("active");
  }
- //   firstImg.classList.add("last");
- //  firstImg.classList.add("last");
-
- //  firstImg.classList.remove("first");
-}
-function nextBtnHandler() {
- lastImg.classList.add("first");
- firstImg.classList.add("last");
-
- lastImg.classList.remove("last");
- firstImg.classList.remove("first");
-}
-leftBtn.addEventListener("click", () => {
- prevBtnHandler();
+};
+prevBtn.addEventListener("click", () => {
+ btnHandler("prev");
 });
-// rightBtn.addEventListener("click", nextBtnHandler);
+nextBtn.addEventListener("click", () => {
+ btnHandler("next");
+});
